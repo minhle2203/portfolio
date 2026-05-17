@@ -1,0 +1,78 @@
+import Image from "next/image";
+import type { Section } from "@/lib/case-studies/types";
+
+export default function CaseStudySection({ section }: { section: Section }) {
+  switch (section.type) {
+    case "heading":
+      return (
+        <h2 className="mt-20 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
+          {section.text}
+        </h2>
+      );
+
+    case "text":
+      return (
+        <p className="mt-6 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
+          {section.text}
+        </p>
+      );
+
+    case "list": {
+      const Tag = section.ordered ? "ol" : "ul";
+      return (
+        <Tag
+          className={`mt-6 space-y-3 text-lg leading-8 text-zinc-700 dark:text-zinc-300 ${
+            section.ordered ? "list-decimal" : "list-disc"
+          } pl-6`}
+        >
+          {section.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </Tag>
+      );
+    }
+
+    case "image":
+      return (
+        <figure className="mt-12">
+          <div className="overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800">
+            <Image
+              src={section.src}
+              alt={section.alt}
+              width={1600}
+              height={1000}
+              className="h-auto w-full"
+            />
+          </div>
+          {section.caption && (
+            <figcaption className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
+              {section.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case "metrics":
+      return (
+        <dl className="mt-8 grid grid-cols-2 gap-6 border-y border-zinc-200 py-8 sm:grid-cols-4 dark:border-zinc-800">
+          {section.items.map((m, i) => (
+            <div key={i}>
+              <dt className="text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                {m.label}
+              </dt>
+              <dd className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                {m.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      );
+
+    case "quote":
+      return (
+        <blockquote className="mt-12 border-l-2 border-zinc-900 pl-6 text-xl italic leading-9 text-zinc-700 dark:border-zinc-50 dark:text-zinc-300">
+          {section.text}
+        </blockquote>
+      );
+  }
+}
