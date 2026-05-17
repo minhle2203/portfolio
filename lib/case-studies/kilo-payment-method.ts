@@ -17,11 +17,11 @@ export const kiloPaymentContent: CaseStudyContent = {
     { type: "heading", text: "The business case" },
     {
       type: "text",
-      text: "At Kilo's average order value of 9M VND, a single COD theft required selling another 796M VND of goods to recover the lost revenue. At 20M-per-order, recovery required 1.76B VND in sales. With 10% of November orders carrying COD above 20M, the incentive for theft was higher than a driver's monthly salary.",
+      text: "At Kilo's typical order value, a single COD theft required selling roughly 90× the lost amount in additional goods to recover the revenue — and on high-value orders, the recovery multiple stretched even further. A meaningful share of November orders carried COD amounts large enough that the incentive for theft exceeded a driver's monthly salary.",
     },
     {
       type: "text",
-      text: "On top of that, cancellation rates on large orders (>20M) were nearly 2× the overall average — and most of those cancellations were initiated by Kilo itself, costing ~40M VND in in-flight delivery penalty fees in November alone.",
+      text: "On top of that, cancellation rates on large orders were nearly 2× the overall average — and most of those cancellations were initiated by Kilo itself, costing the company tens of millions of VND in in-flight delivery penalty fees in November alone.",
     },
     {
       type: "image",

@@ -21,7 +21,7 @@ export const weployPayrollContent: CaseStudyContent = {
     },
     {
       type: "text",
-      text: "The Mobi E-contract integration alone cost ~8,000 VND per talent every month, with 200+ talents. SMS notifications labeled \"Mobiphone…\" were often dismissed as spam, slowing down signing.",
+      text: "The Mobi E-contract integration carried a per-talent monthly fee that, multiplied across 200+ talents, ate a meaningful chunk of operating cost every cycle. SMS notifications labeled \"Mobiphone…\" were often dismissed as spam, slowing down signing.",
     },
     { type: "heading", text: "Goals" },
     {
@@ -104,7 +104,7 @@ export const weployPayrollContent: CaseStudyContent = {
       type: "metrics",
       items: [
         { label: "Talents processed per cycle", value: "200+" },
-        { label: "Mobi E-contract cost saved", value: "100%" },
+        { label: "Third-party contract cost", value: "Removed" },
         { label: "Payroll cycle", value: "bi-weekly" },
         { label: "Third-party dependencies", value: "0" },
       ],
