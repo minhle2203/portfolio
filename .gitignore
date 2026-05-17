@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local content imports (kept off public repo)
 /notion-import
+REVIEW.md
