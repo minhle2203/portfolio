@@ -84,8 +84,7 @@ export default function LightboxImage({ src, alt }: Props) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative h-full max-h-[90vh] w-full max-w-6xl"
+              className="pointer-events-none relative h-full max-h-[90vh] w-full max-w-6xl"
             >
               <Image
                 src={src}
