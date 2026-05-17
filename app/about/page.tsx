@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import FadeIn from "@/components/FadeIn";
 import { aboutContent } from "@/lib/about";
 
 export const metadata = {
@@ -11,6 +12,7 @@ export default function AboutPage() {
 
   return (
     <Container>
+      <FadeIn>
       <section className="py-24 sm:py-32">
         <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
           About
@@ -28,7 +30,9 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="border-t border-zinc-200 py-16 sm:py-24 dark:border-zinc-800">
         <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           Experience
@@ -63,7 +67,9 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="border-t border-zinc-200 py-16 sm:py-24 dark:border-zinc-800">
         <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           Skills & methods
@@ -83,7 +89,9 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="border-t border-zinc-200 py-16 sm:py-24 dark:border-zinc-800">
         <div className="grid gap-16 sm:grid-cols-2">
           <div>
@@ -119,6 +127,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </Container>
   );
 }

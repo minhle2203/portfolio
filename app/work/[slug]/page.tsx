@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Container from "@/components/Container";
 import CaseStudySection from "@/components/CaseStudySection";
+import FadeIn from "@/components/FadeIn";
 import { getProjectBySlug, projects } from "@/lib/projects";
 import { getCaseStudyContent } from "@/lib/case-studies";
 
@@ -40,6 +41,7 @@ export default async function CaseStudyPage({
         >
           ← All work
         </Link>
+        <FadeIn>
         <header className="mt-8">
           <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
             {project.company} · {project.year}
@@ -91,14 +93,19 @@ export default async function CaseStudyPage({
             )}
           </dl>
         </header>
+        </FadeIn>
 
         {content ? (
           <div className="mt-20 max-w-3xl">
-            <p className="text-lg leading-9 text-zinc-700 dark:text-zinc-300">
-              {content.context}
-            </p>
+            <FadeIn>
+              <p className="text-lg leading-9 text-zinc-700 dark:text-zinc-300">
+                {content.context}
+              </p>
+            </FadeIn>
             {content.sections.map((section, i) => (
-              <CaseStudySection key={i} section={section} />
+              <FadeIn key={i}>
+                <CaseStudySection section={section} />
+              </FadeIn>
             ))}
           </div>
         ) : (
