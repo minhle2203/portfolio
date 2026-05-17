@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LightboxImage from "./LightboxImage";
 import type { Section } from "@/lib/case-studies/types";
 
 export default function CaseStudySection({ section }: { section: Section }) {
@@ -42,15 +42,7 @@ export default function CaseStudySection({ section }: { section: Section }) {
     case "image":
       return (
         <figure className="mt-12">
-          <div className="overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800">
-            <Image
-              src={section.src}
-              alt={section.alt}
-              width={1600}
-              height={1000}
-              className="h-auto w-full"
-            />
-          </div>
+          <LightboxImage src={section.src} alt={section.alt} />
           {section.caption && (
             <figcaption className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
               {section.caption}
