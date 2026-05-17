@@ -10,6 +10,13 @@ export default function CaseStudySection({ section }: { section: Section }) {
         </h2>
       );
 
+    case "subheading":
+      return (
+        <h3 className="mt-12 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+          {section.text}
+        </h3>
+      );
+
     case "text":
       return (
         <p className="mt-6 text-lg leading-9 text-zinc-700 dark:text-zinc-300">
@@ -73,6 +80,47 @@ export default function CaseStudySection({ section }: { section: Section }) {
         <blockquote className="mt-12 border-l-2 border-zinc-900 pl-6 text-xl italic leading-9 text-zinc-700 dark:border-zinc-50 dark:text-zinc-300">
           {section.text}
         </blockquote>
+      );
+
+    case "callout":
+      return (
+        <div className="mt-8 rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-base leading-8 text-emerald-900 dark:border-emerald-900/50 dark:bg-emerald-950/40 dark:text-emerald-100">
+          {section.text}
+        </div>
+      );
+
+    case "table":
+      return (
+        <div className="mt-8 -mx-4 overflow-x-auto sm:mx-0">
+          <table className="min-w-full divide-y divide-zinc-200 text-sm dark:divide-zinc-800">
+            <thead>
+              <tr>
+                {section.headers.map((h, i) => (
+                  <th
+                    key={i}
+                    className="px-4 py-3 text-left text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400"
+                  >
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+              {section.rows.map((row, i) => (
+                <tr key={i}>
+                  {row.map((cell, j) => (
+                    <td
+                      key={j}
+                      className="px-4 py-3 align-top text-zinc-700 dark:text-zinc-300"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       );
   }
 }
