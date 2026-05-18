@@ -17,10 +17,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://portfolio-kappa-ten-45wunrkzan.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Minh Le — Product Manager",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Minh Le — Product Manager",
+    template: "%s",
+  },
   description:
-    "Product Manager portfolio — turning problems into shipped solutions.",
+    "Product Manager portfolio — turning problems into shipped solutions. 8 years building software across workforce platforms, B2B marketplaces, and loyalty marketing.",
+  keywords: [
+    "Product Manager",
+    "Product Owner",
+    "Minh Le",
+    "Portfolio",
+    "Vietnam",
+    "Weploy",
+    "Kilo",
+  ],
+  authors: [{ name: "Minh Le Hong Anh" }],
+  creator: "Minh Le Hong Anh",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "Minh Le — Product Manager",
+    title: "Minh Le — Product Manager",
+    description:
+      "Product Manager portfolio — turning problems into shipped solutions.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Minh Le — Product Manager",
+    description:
+      "Product Manager portfolio — turning problems into shipped solutions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

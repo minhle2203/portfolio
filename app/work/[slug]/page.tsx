@@ -17,8 +17,24 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
+  if (!project) {
+    return { title: "Case study — Minh Le" };
+  }
+  const title = `${project.title} — Minh Le`;
+  const description = project.summary;
   return {
-    title: project ? `${project.title} — Minh Le` : "Case study — Minh Le",
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
