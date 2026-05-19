@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Container>
-        <FadeIn>
+        <FadeIn priority>
           <section className="flex min-h-[calc(80vh-4rem)] flex-col justify-center py-24 sm:py-32">
             <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
               Product Manager

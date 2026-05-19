@@ -10,9 +10,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div
         className={`relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br ${project.accent} transition-transform duration-500 group-hover:scale-[1.02]`}
       >
-        <div className="absolute inset-0 bg-zinc-900/10 transition-opacity duration-500 group-hover:opacity-0" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-zinc-900/10 to-transparent"
+        />
         <div className="absolute bottom-0 left-0 p-6 sm:p-8">
-          <p className="text-xs font-medium uppercase tracking-widest text-white/80">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white">
             {project.company} · {project.year}
           </p>
           <h3 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">

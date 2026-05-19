@@ -57,7 +57,7 @@ export default async function CaseStudyPage({
         >
           ← All work
         </Link>
-        <FadeIn>
+        <FadeIn priority>
         <header className="mt-8">
           <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
             {project.company} · {project.year}

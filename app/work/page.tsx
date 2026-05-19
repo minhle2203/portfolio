@@ -11,7 +11,7 @@ export default function WorkPage() {
   return (
     <Container>
       <section className="py-24 sm:py-32">
-        <FadeIn>
+        <FadeIn priority>
           <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
             Selected work
           </h1>

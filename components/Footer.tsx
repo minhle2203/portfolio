@@ -33,7 +33,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <p className="mt-8 text-xs text-zinc-400 dark:text-zinc-600">
+        <p className="mt-8 text-xs text-zinc-500 dark:text-zinc-500">
           © {new Date().getFullYear()} Minh Le. Built with Next.js, deployed on
           Vercel.
         </p>

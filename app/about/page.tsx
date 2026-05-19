@@ -12,7 +12,7 @@ export default function AboutPage() {
 
   return (
     <Container>
-      <FadeIn>
+      <FadeIn priority>
       <section className="py-24 sm:py-32">
         <p className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
           About

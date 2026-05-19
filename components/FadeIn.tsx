@@ -1,24 +1,29 @@
-"use client";
-
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
   delay?: number;
+  /**
+   * When true, animates transform only (no opacity change). Use for above-the-fold
+   * content so the element is visible on first paint — LCP-safe.
+   */
+  priority?: boolean;
   className?: string;
 };
 
-export default function FadeIn({ children, delay = 0, className }: Props) {
+export default function FadeIn({
+  children,
+  delay = 0,
+  priority = false,
+  className,
+}: Props) {
+  const style: CSSProperties | undefined =
+    delay > 0 ? { animationDelay: `${delay}s` } : undefined;
+  const animClass = priority ? "anim-slide" : "anim-fade";
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
-    >
+    <div style={style} className={`${animClass} ${className ?? ""}`}>
       {children}
-    </motion.div>
+    </div>
   );
 }
